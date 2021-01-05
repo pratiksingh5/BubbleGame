@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'gotham';
+    font-family: 'gilroy';
 }
 html,body{
     width: 100%;
@@ -16,13 +16,14 @@ html,body{
     background-position: center;
 }
 #game{
-    width: 62%;
-    height: 70%;
-    background-color: aqua;
+    width: 55%;
+    height: 74%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+   
+   
     box-shadow:
   0 2.8px 2.2px rgba(0, 0, 0, 0.02),
   0 6.7px 5.3px rgba(0, 0, 0, 0.028),
@@ -35,46 +36,284 @@ html,body{
 #panel{
     width: 100%;
     height: 20%;
-    background-color:#13c0a9;
+    background-color:#1da194;
+    border-radius: 5px 5px 0 0;
+ 
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 0 2rem;
 }
 #canvas{
     width: 100%;
     height: 80%;
-    background-color:white;
-    padding: 20px;
+    background-color:rgba(255, 255, 255, 0.836);
+    backdrop-filter: blur(5px);
+    padding: 10px 15px;
     display: flex;
     flex-wrap: wrap;
-
+    border-radius:0 0 5px 5px;
+    overflow: hidden;
+    cursor: pointer;
 }
 .label{
-    /* width: 30%;
-    height: 100px;
-    background-color:blue; */
+    width: 28%;
+   
     font-size: 30px;
-    font-weight: 700;
+    font-weight: 200;
     color: white;
+    letter-spacing: 2px;
 }
 .scoreboard{
     background-color:white;
     color: rgb(34, 131, 131);
     border-radius: 5px;
-    padding: 15px;
+    padding: 10px;
     margin: 15px;
 }
 .bubble{
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     background-color:#f8a59f;
+    font-family: 'lato';
     border-radius:50%;
     padding: 10px;
     font-size: 30px;
-    font-weight: 700;
-    color: teal;
+    font-weight: 400;
+    color: rgb(16, 107, 107);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px;
+    margin: 10px;
+   
 }
+#background h3{
+position: absolute;
+bottom: 5%;
+left: 50%;
+transform: translate(-50%,0);
+font-family: 'poppins';
+font-weight: 500;
+word-spacing: 2px;
+
+color:rgb(70, 56, 56);
+
+}
+#background h3 span{
+    color: #fc5850;
+    font-family: 'poppins';
+font-weight: 500;
+    
+}
+#over h1{
+    font-family: 'gilroy';
+    font-size: 3rem;
+    letter-spacing: 3px;
+    font-weight: 400;
+    color:rgb(241, 134, 134);
+
+}
+
+#over{
+    width: 80%;
+    height: 40%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+#over h2{
+    margin-top: 10px;
+    font-family: 'gilroy';
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    font-weight: 400;
+    color:rgb(4, 117, 108);
+    margin-bottom: 10px;
+}
+#over h2 span{
+    color:rgb(221, 76, 89);
+    font-weight: 600;
+   
+}
+.btn{
+    
+    border-radius:10px;
+    background-color:#f3847c;
+    color:white;
+    padding: 12px 20px;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+a{
+    text-decoration: none;
+}
+#final{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    background-color:rgb(255, 255, 255);
+    backdrop-filter: blur(5px);
+    top: 20%;
+    border-radius:0 0 5px 5px;
+    display: none;
+}
+#loader{
+    width: 100%;
+    height: 100%;
+    display: flex;
+   
+    position: absolute;
+    top: 0;
+    z-index: 2;
+   
+}
+
+
+.lds-grid {
+    display: inline-block;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .lds-grid div {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    animation: lds-grid 1.2s linear infinite;
+  }
+  .lds-grid div:nth-child(1) {
+    top: 8px;
+    left: 8px;
+    animation-delay: 0s;
+    background-color:#f3847c;
+  }
+  .lds-grid div:nth-child(2) {
+    top: 8px;
+    left: 32px;
+    animation-delay: -0.4s;
+    background-color:#1da194;
+
+  }
+  .lds-grid div:nth-child(3) {
+    top: 8px;
+    left: 56px;
+    animation-delay: -0.8s;
+    background-color:#f3847c;
+
+  }
+  .lds-grid div:nth-child(4) {
+    top: 32px;
+    left: 8px;
+    animation-delay: -0.4s;
+    background-color:#1da194;
+
+  }
+  .lds-grid div:nth-child(5) {
+    top: 32px;
+    left: 32px;
+    animation-delay: -0.8s;
+    background-color:#f3847c;
+
+  }
+  .lds-grid div:nth-child(6) {
+    top: 32px;
+    left: 56px;
+    animation-delay: -1.2s;
+    background-color:#1da194;
+
+  }
+  .lds-grid div:nth-child(7) {
+    top: 56px;
+    left: 8px;
+    animation-delay: -0.8s;
+    background-color:#f3847c;
+
+  }
+  .lds-grid div:nth-child(8) {
+    top: 56px;
+    left: 32px;
+    animation-delay: -1.2s;
+    background-color:#1da194;
+
+  }
+  .lds-grid div:nth-child(9) {
+    top: 56px;
+    left: 56px;
+    animation-delay: -1.6s;
+   
+    background-color:#f3847c;
+
+  }
+  @keyframes lds-grid {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  #one{
+      width: 50%;
+      height: 100%;
+      background-color:rgb(255, 255, 255);
+  }
+  #two{
+    width: 50%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+ @media (max-width: 500px){
+    #panel{
+        padding: 0 0.5rem;
+    }
+    .label{
+        width: 24%;
+        height: 50%;
+        font-size: 14px;
+        font-weight: 200;
+        color: white;
+        letter-spacing: 0.2px;
+      
+        text-align: center;
+        
+    }
+    .scoreboard{
+        display: inline-block;
+
+        background-color:white;
+        color: rgb(34, 131, 131);
+        border-radius: 5px;
+        padding: 5px;
+        margin-top: 20px;
+        margin: 5px;
+    }
+    #over h1{
+        font-size: 15px;
+        width: 100%;
+    }
+    #over h2{
+        font-size: 11px;
+        width: 100%;
+    }
+    .btn{
+        font-size: 8px;
+        padding: 8px 14px;
+        border-radius:2px;
+    }
+    #background h3{
+        font-size: 10px;
+    }
+    .bubble{
+        width: 22px;
+        height: 22px;
+        font-size: 10px;
+    }
+} 
